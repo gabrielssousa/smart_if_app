@@ -12,10 +12,10 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: HomePage(),
+      home: const HomePage(),
       debugShowCheckedModeBanner: false,
       routes: {
-        '/notificacao': (context) => TelaNotificacao(),
+        '/notificacao': (context) => const TelaNotificacao(),
       },
     );
   }

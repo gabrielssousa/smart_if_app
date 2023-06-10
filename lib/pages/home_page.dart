@@ -1,5 +1,3 @@
-import 'dart:html';
-
 import 'package:flutter/material.dart';
 import 'package:smart_if_app/pages/tela_notificacao.dart';
 
