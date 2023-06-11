@@ -1,14 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_slidable/flutter_slidable.dart';
 import '../models/notificacao.dart';
 import 'package:intl/intl.dart';
 
 class ListaNotificacao extends StatefulWidget {
   final Notificacao notificacao;
   final Function(Notificacao) deletarNotificao;
+  // final Color circleAvatarColor;
 
-  const ListaNotificacao(
-      {super.key, required this.notificacao, required this.deletarNotificao});
+  const ListaNotificacao({
+    super.key,
+    required this.notificacao,
+    required this.deletarNotificao,
+  });
 
   @override
   State<ListaNotificacao> createState() => _ListaNotificacaoState();
@@ -19,29 +22,12 @@ class _ListaNotificacaoState extends State<ListaNotificacao> {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(8.0),
-      child: Slidable(
-        endActionPane: ActionPane(
-          extentRatio: 0.22,
-          motion: const BehindMotion(),
-          children: [
-            SlidableAction(
-              onPressed: (value) {
-                widget.deletarNotificao(widget.notificacao);
-              },
-              autoClose: true,
-              backgroundColor: Colors.red,
-              borderRadius: BorderRadius.circular(4.0),
-              foregroundColor: Colors.white,
-              icon: Icons.delete,
-              label: 'Deletar',
-            ),
-          ],
-        ),
-        child: Container(
-          decoration: BoxDecoration(
-            color: const Color.fromARGB(255, 239, 242, 245),
-            borderRadius: BorderRadius.circular(4.0),
-          ),
+      child: Dismissible(
+        key: Key(DateTime.now().millisecondsSinceEpoch.toString()),
+        background: buildContainerDelete(),
+        direction: DismissDirection.endToStart,
+        child: Card(
+          color: const Color(0xFF2F3032),
           child: Padding(
             padding: const EdgeInsets.all(8.0),
             child: Column(
@@ -49,9 +35,15 @@ class _ListaNotificacaoState extends State<ListaNotificacao> {
               children: [
                 Row(
                   children: [
-                    const Icon(
-                      Icons.warning,
-                      color: Colors.red,
+                    const CircleAvatar(
+                      radius: 25.0,
+                      child: Center(
+                        child: Icon(
+                          Icons.info_outline,
+                          size: 30.0,
+                          color: Colors.white,
+                        ),
+                      ),
                     ),
                     const SizedBox(
                       width: 16.0,
@@ -64,16 +56,16 @@ class _ListaNotificacaoState extends State<ListaNotificacao> {
                           Text(
                             widget.notificacao.titulo,
                             style: const TextStyle(
-                                color: Colors.black,
+                                color: Colors.white,
                                 fontSize: 15.0,
                                 fontWeight: FontWeight.bold),
                           ),
-                          const SizedBox(height: 4.0),
+                          const SizedBox(height: 7.0),
                           Text(
                             DateFormat('dd/MM/yy')
                                 .format(widget.notificacao.dateTime),
-                            style: TextStyle(
-                                color: Colors.grey[600],
+                            style: const TextStyle(
+                                color: Color(0xFF7E7979),
                                 fontSize: 14.0,
                                 fontWeight: FontWeight.w500),
                           )
@@ -86,6 +78,35 @@ class _ListaNotificacaoState extends State<ListaNotificacao> {
             ),
           ),
         ),
+      ),
+    );
+  }
+
+  Container buildContainerDelete() {
+    return Container(
+      decoration: const BoxDecoration(
+        color: Color(0xFFEB5757),
+        borderRadius: BorderRadius.all(Radius.circular(4.0)),
+      ),
+      margin: const EdgeInsets.fromLTRB(8.0, 8.0, 8.0, 8.0),
+      alignment: const Alignment(0.8, 0.0),
+      child: const Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Icon(
+            Icons.delete,
+            color: Colors.white,
+          ),
+          SizedBox(height: 4.0),
+          Text(
+            'Deletar',
+            style: TextStyle(
+              color: Colors.white,
+              fontSize: 15.0,
+              fontWeight: FontWeight.bold,
+            ),
+          )
+        ],
       ),
     );
   }
