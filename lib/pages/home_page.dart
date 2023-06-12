@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:smart_if_app/pages/tela_notificacao.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
