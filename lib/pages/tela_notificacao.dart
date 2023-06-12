@@ -15,21 +15,14 @@ class _TelaNotificacaoState extends State<TelaNotificacao> {
         titulo: 'Aprenda como alcançar suas metas com o SmartIF!',
         dateTime: DateTime.now()),
     Notificacao(
-        titulo: 'Simplifique sua rotina diária de treinos!',
-        dateTime: DateTime.now()),
-    Notificacao(
-        titulo: 'Você sabe quanto está gastando na sua dieta?',
-        dateTime: DateTime.now()),
-    Notificacao(
         titulo: 'Fale com o suporte se tiver alguma dúvida.',
         dateTime: DateTime.now()),
+    Notificacao(titulo: 'Cadastro concluído!', dateTime: DateTime.now()),
+    Notificacao(
+        titulo:
+            'Para utilizar o aplicativo em sua total funcionalidade, cadastre-se.',
+        dateTime: DateTime.now()),
   ];
-
-  void deletarNotificacao(Notificacao notificacao) {
-    setState(() {
-      notificacoes.remove(notificacao);
-    });
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -54,11 +47,26 @@ class _TelaNotificacaoState extends State<TelaNotificacao> {
         ),
         body: ListView(
           children: [
-            for (Notificacao notificacao in notificacoes)
-              ListaNotificacao(
-                notificacao: notificacao,
-                deletarNotificao: deletarNotificacao,
-              ),
+            ListaNotificacao(
+              notificacao: notificacoes[0],
+              circleAvatarColor: 0xFF5458F7,
+              circleAvatarIcon: Icons.info_outline,
+            ),
+            ListaNotificacao(
+              notificacao: notificacoes[1],
+              circleAvatarColor: 0xFFF2C94C,
+              circleAvatarIcon: Icons.error_outline,
+            ),
+            ListaNotificacao(
+              notificacao: notificacoes[2],
+              circleAvatarColor: 0xFF00CC99,
+              circleAvatarIcon: Icons.check_circle_outline,
+            ),
+            ListaNotificacao(
+              notificacao: notificacoes[3],
+              circleAvatarColor: 0xFFEB5757,
+              circleAvatarIcon: Icons.cancel_outlined,
+            ),
           ],
         ),
       ),
