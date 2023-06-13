@@ -1,9 +1,10 @@
 import 'dart:html';
+
 import 'package:flutter/material.dart';
 
 class TelaEquipamentos extends StatelessWidget {
-  final String title;
-  const TelaEquipamentos({Key? key, required this.title}) : super(key: key);
+  
+  const TelaEquipamentos({Key? key, }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -250,3 +251,4 @@ buildContainerBut() {
     ),
   );
 }
+
