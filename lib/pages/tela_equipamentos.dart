@@ -1,10 +1,14 @@
 import 'dart:html';
+import 'dart:js';
 
 import 'package:flutter/material.dart';
 
+import 'home_page.dart';
+
 class TelaEquipamentos extends StatelessWidget {
-  
-  const TelaEquipamentos({Key? key, }) : super(key: key);
+  const TelaEquipamentos({
+    Key? key,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +25,7 @@ class TelaEquipamentos extends StatelessWidget {
               buildContainerRos(),
               buildContainerFly(),
               buildContainerLeg(),
-              buildContainerBut(),
+              buildContainerBut(context),
             ],
           ),
         ),
@@ -218,7 +222,7 @@ buildContainerRos() {
   );
 }
 
-buildContainerBut() {
+buildContainerBut(BuildContext context) {
   return Container(
     child: Padding(
       padding: const EdgeInsets.all(10),
@@ -237,9 +241,12 @@ buildContainerBut() {
                     padding: EdgeInsets.all(0),
                     backgroundColor: Color(0xFF101015),
                   ),
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => HomePage()));
+                  },
                   child: Image.asset(
-                    'assets/images/smartIF.png',
+                    'assets/images/smart.png',
                     height: 70,
                   ),
                 ),
@@ -251,4 +258,5 @@ buildContainerBut() {
     ),
   );
 }
+
 
