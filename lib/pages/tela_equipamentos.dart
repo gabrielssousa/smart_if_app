@@ -1,3 +1,6 @@
+import 'dart:html';
+import 'package:flutter/material.dart';
+
 class TelaEquipamentos extends StatelessWidget {
   final String title;
   const TelaEquipamentos({Key? key, required this.title}) : super(key: key);
