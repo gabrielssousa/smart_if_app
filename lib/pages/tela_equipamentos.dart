@@ -1,4 +1,7 @@
+import 'dart:html';
+import 'dart:js';
 import 'package:flutter/material.dart';
+import 'package:smart_if_app/pages/components/container.dart';
 
 import 'home_page.dart';
 
@@ -23,6 +26,7 @@ class TelaEquipamentos extends StatelessWidget {
               buildContainerFly(),
               buildContainerLeg(),
               buildContainerBut(context),
+              ContainerEquipamentos('legPress', "blabla"),
             ],
           ),
         ),
@@ -240,7 +244,7 @@ buildContainerBut(BuildContext context) {
                   ),
                   onPressed: () {
                     Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => const HomePage()));
+                        MaterialPageRoute(builder: (context) => HomePage()));
                   },
                   child: Image.asset(
                     'assets/images/smart.png',
@@ -255,5 +259,3 @@ buildContainerBut(BuildContext context) {
     ),
   );
 }
-
-
