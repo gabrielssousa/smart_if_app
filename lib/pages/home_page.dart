@@ -70,7 +70,7 @@ class _HomePageState extends State<HomePage> {
                     ),
                     ElevatedButton(
                       onPressed: () {
-                        Navigator.of(context).pushNamed('/notificacao');
+                        // Navigator.of(context).pushNamed('/notificacao');
                       },
                       child: Text(
                         'Treinos',
@@ -90,7 +90,7 @@ class _HomePageState extends State<HomePage> {
                     ),
                     ElevatedButton(
                       onPressed: () {
-                        Navigator.of(context).pushNamed('/notificacao');
+                        Navigator.of(context).pushNamed('/equipamentos');
                       },
                       child: Text(
                         'Equipamentos',
@@ -117,7 +117,7 @@ class _HomePageState extends State<HomePage> {
                     ),
                     ElevatedButton(
                       onPressed: () {
-                        Navigator.of(context).pushNamed('/notificacao');
+                        // Navigator.of(context).pushNamed('/notificacao');
                       },
                       child: Text(
                         'Suporte',

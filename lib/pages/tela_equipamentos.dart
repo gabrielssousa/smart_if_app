@@ -1,6 +1,3 @@
-import 'dart:html';
-import 'dart:js';
-
 import 'package:flutter/material.dart';
 
 import 'home_page.dart';
@@ -243,7 +240,7 @@ buildContainerBut(BuildContext context) {
                   ),
                   onPressed: () {
                     Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => HomePage()));
+                        MaterialPageRoute(builder: (context) => const HomePage()));
                   },
                   child: Image.asset(
                     'assets/images/smart.png',
