@@ -26,7 +26,7 @@ class TelaEquipamentos extends StatelessWidget {
               buildContainerFly(),
               buildContainerLeg(),
               buildContainerBut(context),
-              ContainerEquipamentos('legPress', "blabla"),
+              //ContainerEquipamentos('legPress', "blabla"),
             ],
           ),
         ),
