@@ -70,7 +70,7 @@ class _HomePageState extends State<HomePage> {
                     ),
                     ElevatedButton(
                       onPressed: () {
-                        // Navigator.of(context).pushNamed('/notificacao');
+                        Navigator.of(context).pushNamed('/treinos');
                       },
                       child: Text(
                         'Treinos',

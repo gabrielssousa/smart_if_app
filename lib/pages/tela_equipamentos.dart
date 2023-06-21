@@ -1,7 +1,4 @@
-import 'dart:html';
-import 'dart:js';
 import 'package:flutter/material.dart';
-import 'package:smart_if_app/pages/components/container.dart';
 
 import 'home_page.dart';
 
